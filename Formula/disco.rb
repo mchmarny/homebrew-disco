@@ -5,24 +5,22 @@
 class Disco < Formula
   desc "Utility for bulk image, license, and vulnerability discovery in containerize workloads on GCP."
   homepage "https://github.com/mchmarny/disco"
-  version "0.3.10"
+  version "0.3.11"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mchmarny/disco/releases/download/v0.3.10/disco_0.3.10_macOS_arm64"
-      sha256 "34987a53555cf5e827f16a078104ca0004cefd2cf5521d6d9eecb51a237f046c"
+    url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_macOS_all"
+    sha256 "0074a6335f9664155e0f72ab56bdc5def964fd05dd8b6a07e2a630071816b08b"
 
-      def install
-        bin.install "disco" => "disco"
-      end
+    def install
+      bin.install "disco" => "disco"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/disco/releases/download/v0.3.10/disco_0.3.10_linux_arm64"
-      sha256 "2677dbb2a90210fbb63d5230cdc24cdebb89d38edf8184ad88ddb63740b289f7"
+      url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_linux_arm64"
+      sha256 "c1cca3725453715fe7aa5721d2404443a691d9755f682eb6630637c55d1883cf"
 
       def install
         bin.install "disco" => "disco"
@@ -31,6 +29,6 @@ class Disco < Formula
   end
 
   test do
-    system "#{bin}/disco", "-v"
+    system "#{bin}/disco", "version"
   end
 end

@@ -5,18 +5,26 @@
 class Disco < Formula
   desc "Utility for bulk image, license, and vulnerability discovery in containerize workloads on GCP."
   homepage "https://github.com/mchmarny/disco"
-  version "0.3.11"
+  version "0.3.12"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_macOS_all"
-    sha256 "0074a6335f9664155e0f72ab56bdc5def964fd05dd8b6a07e2a630071816b08b"
+    url "https://github.com/mchmarny/disco/releases/download/v0.3.12/disco_0.3.12_mac_all"
+    sha256 "a33a85dcfe89511a555b63261e83e6425180e9943e2189fb07ec04714df17fa6"
+
+    def install
+      bin.install "disco_0.3.12_mac_all" => "disco"
+    end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_linux_arm64"
-      sha256 "c1cca3725453715fe7aa5721d2404443a691d9755f682eb6630637c55d1883cf"
+      url "https://github.com/mchmarny/disco/releases/download/v0.3.12/disco_0.3.12_linux_arm64"
+      sha256 "1dc6067b852fbe70c47889a013e677b7ca5ba57bf763d84f8c5cd9cf83881621"
+
+      def install
+        bin.install "disco_0.3.12_linux_arm64" => "disco"
+      end
     end
   end
 end

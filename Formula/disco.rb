@@ -11,24 +11,12 @@ class Disco < Formula
   on_macos do
     url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_macOS_all"
     sha256 "0074a6335f9664155e0f72ab56bdc5def964fd05dd8b6a07e2a630071816b08b"
-
-    def install
-      bin.install "disco" => "disco"
-    end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/mchmarny/disco/releases/download/v0.3.11/disco_0.3.11_linux_arm64"
       sha256 "c1cca3725453715fe7aa5721d2404443a691d9755f682eb6630637c55d1883cf"
-
-      def install
-        bin.install "disco" => "disco"
-      end
     end
-  end
-
-  test do
-    system "#{bin}/disco", "version"
   end
 end

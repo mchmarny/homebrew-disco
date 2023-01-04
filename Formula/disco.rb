@@ -10,7 +10,7 @@ class Disco < Formula
 
   on_macos do
     url "https://github.com/mchmarny/disco/releases/download/v0.7.2/disco_0.7.2_darwin_all"
-    sha256 "85932de29092da0c97e581cef004d4c706e1110f014db656143021fe0c45ba0a"
+    sha256 "aacb465d519a423d63872c9bac64250b8a11db55bdf3d17124cd4ac0a3bf1a75"
 
     def install
       bin.install "disco_0.7.2_darwin_all" => "disco"
@@ -20,7 +20,7 @@ class Disco < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/mchmarny/disco/releases/download/v0.7.2/disco_0.7.2_linux_amd64"
-      sha256 "adab755712a94ed0b0c271962de6beadc32c4e97cd58818a896ca3cd218bb453"
+      sha256 "52059c828ed707264aaf0f8e4bc0cbc20a182392f507139a62970b4819dfea91"
 
       def install
         bin.install "disco_0.7.2_linux_amd64" => "disco"
@@ -28,7 +28,7 @@ class Disco < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/mchmarny/disco/releases/download/v0.7.2/disco_0.7.2_linux_arm64"
-      sha256 "cfa800dc70a6ccfd63ec83ee88c67630b49c07a3b7e6c5c58980d1c475d6ce39"
+      sha256 "ea18ffe912646fde7a82e21455ac5a5b926e8a3b1278e4b0f4cd6e3d90e7a5ad"
 
       def install
         bin.install "disco_0.7.2_linux_arm64" => "disco"

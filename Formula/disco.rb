@@ -5,33 +5,33 @@
 class Disco < Formula
   desc "Utility for bulk image, license, and vulnerability discovery in containerize workloads on GCP."
   homepage "https://github.com/mchmarny/disco"
-  version "0.9.1"
+  version "0.9.2"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/mchmarny/disco/releases/download/v0.9.1/disco_0.9.1_darwin_all"
-    sha256 "8d830b2fe127b4b443976ef94175c4cba05bb2d9390a87ad4a8d6970cae545ae"
+    url "https://github.com/mchmarny/disco/releases/download/v0.9.2/disco_0.9.2_darwin_all"
+    sha256 "a3dfb5524318f53633ccfa58a8dc98c4556fcfca5b1dbe412af48762ab9a6e04"
 
     def install
-      bin.install "disco_0.9.1_darwin_all" => "disco"
+      bin.install "disco_0.9.2_darwin_all" => "disco"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mchmarny/disco/releases/download/v0.9.1/disco_0.9.1_linux_amd64"
-      sha256 "5f9987ad9c9d0d414df9089ceef3b9716a537b4876b06a4d823e0656cac77215"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mchmarny/disco/releases/download/v0.9.2/disco_0.9.2_linux_arm64"
+      sha256 "fc161165ef4601a4399add734d8a06644c8db6c25de525026d4df508f641828d"
 
       def install
-        bin.install "disco_0.9.1_linux_amd64" => "disco"
+        bin.install "disco_0.9.2_linux_arm64" => "disco"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/disco/releases/download/v0.9.1/disco_0.9.1_linux_arm64"
-      sha256 "3856a39d02b7d071e5ad3dfa2a6e782eed24dec0db062463f9c6a4954dbabfaf"
+    if Hardware::CPU.intel?
+      url "https://github.com/mchmarny/disco/releases/download/v0.9.2/disco_0.9.2_linux_amd64"
+      sha256 "ab44b69af13bc0479e30a587a851f9fda0da00c4f7363fd42789278b8629daa3"
 
       def install
-        bin.install "disco_0.9.1_linux_arm64" => "disco"
+        bin.install "disco_0.9.2_linux_amd64" => "disco"
       end
     end
   end
